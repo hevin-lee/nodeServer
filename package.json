@@ -1,0 +1,14 @@
+{
+  "name": "node_server",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "pm2":"pm2 start app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hevin",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
