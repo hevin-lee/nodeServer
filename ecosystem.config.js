@@ -51,12 +51,16 @@ module.exports = {
    */
     deploy: {
         production: {
-            user: 'node', // 服务器用户名
-            host: 'github.com', // 服务器IP或域名
+            user: 'llh91@163.com', // 服务器用户名
+            host: ['13.229.188.59'], // 服务器IP或域名
             ref: 'origin/master', // 分支
             repo: 'git@github.com:hevin-lee/nodeServer.git',
-            path: '/var/www/production', // 部署目录（文件夹）
-            'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env production' // 部署指令 （test 在正式的部署就改为 production）
+            path: '/w1', // 部署目录（文件夹）
+            "ssh_options": "StrictHostKeyChecking=no",
+            'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env production', // 部署指令 （test 在正式的部署就改为 production）
+            "env": {
+              "NODE_ENV": "production"
+            }
         },
         dev: {
             user: 'node',
